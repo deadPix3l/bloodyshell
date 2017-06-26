@@ -8,6 +8,7 @@ from extras import survey
 from extras import toolkit
 from extras import common
 from extras import persistence
+from extras import transfer
 import serverstuff
 
 #################################
@@ -28,13 +29,17 @@ passive = {
 silent = {
     'kill': common.nothing,
     'shell': common.ptyShell,
-    'download': common.nothing,
-    'upload': common.nothing
+    'download': transfer.download,
+    'upload': transfer.upload,
+    'python': common.nothing,
+    'db': common.nothing
 }
 
 # commands that return a result
 active = {
     'persistence': persistence.run,
     'scan': scan.scan,
-    'survey': survey.run
+    'survey': survey.run,
+    'migrate': common.nothing,
+    'netapi': common.nothing
 }
