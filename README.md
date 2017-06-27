@@ -30,8 +30,8 @@ Well, you can probably still find something more suitable, but this will do the 
  probably not. It's likely just going to be a place where I can try new features, debug them and get them ready for integration into basicRAT.
  
 ### Contributors
-[deadPix3l](https://github.com/deadPix3l)
-[vesche](https://github.com/vesche/) - For all the basicRAT code
+- [deadPix3l](https://github.com/deadPix3l)
+- [vesche](https://github.com/vesche/) - For all the basicRAT code
 
 Disclaimer: 
 This RAT is for research purposes only, and should only be used on authorized systems. 
