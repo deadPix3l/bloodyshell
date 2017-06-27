@@ -13,8 +13,7 @@ class Client(object):
 # a function that does nothing
 # here for development
 def nothing(*args):
-    print "nothing() called! Not yet implemented."
-    return ''
+    return "nothing() called! Not yet implemented."
 
 # determine system platform 
 def detectPlat():
