@@ -13,23 +13,17 @@ from extras import transfer
 ##           Commands          ##
 #################################
 
-# no return value.
-# these either handle the data transfer on their own
-# or simply do something quitely and need not send anything
-silent = {
-    #'kill': common.nothing,
-    #'shell': common.ptyShell,
+# commands that (may) return a result
+active = {
     'download': transfer.download,
     'upload': transfer.upload,
-    'python': common.python,
-    'db': common.nothing
-}
-
-# commands that return a result
-active = {
     'persistence': persistence.run,
     'scan': scan.scan,
     'survey': survey.run,
     'migrate': common.nothing,
-    'netapi': common.nothing
+    'netapi': common.nothing,
+    'python': common.python,
+    'wget': toolkit.wget,
+    'selfdestruct': toolkit.selfdestruct,
+    'unzip': toolkit.unzip
 }
