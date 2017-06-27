@@ -21,7 +21,7 @@ def upload(filename, conn):
 
     f.close()
     s.close()
-    return 0
+    return "{} uploaded!".format(filename)
 
 def download(filename, conn):
     # client -> server
@@ -37,4 +37,4 @@ def download(filename, conn):
 
     f.close()
     s.close()
-    return 0
+    return "{} downloaded!".format(filename)
